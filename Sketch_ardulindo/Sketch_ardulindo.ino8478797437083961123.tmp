@@ -1,0 +1,29 @@
+int ledA = 2;
+int ledB = 3;
+int ledC = 4;
+int botao = 5;
+float temp=0;
+int valorrecebido;
+
+
+
+void setup() {
+Serial.begin(9600);
+pinMode(ledA, OUTPUT);
+pinMode(ledB, OUTPUT);
+pinMode(ledC, OUTPUT);
+pinMode(botao,INPUT_PULLUP);
+
+}
+
+void loop() {
+  
+  temp = (float(analogRead(A0))*5/(1023))/0.01;
+  Serial.write(temp);
+  if(Serial.available()>0){
+    valorrecebido=Serial.read()
+    
+    }
+}
+
+
